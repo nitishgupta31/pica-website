@@ -21,7 +21,7 @@ export default function ApplyForAccess() {
 
     try {
       setLoading(true);
-      let res = await fetch("../../apply", {
+      let res = await fetch("/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

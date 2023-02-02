@@ -18,17 +18,6 @@ app.use(bodyParser.json());
   
 // });
 
-app.use(express.static(path.join(__dirname, "./Frontend/build")));
-app.get("*", function (_, res) {
-  res.sendFile(
-    path.join(__dirname, "./Frontend/build/index.html"),
-    function (err) {
-      res.status(500).send(err);
-    }
-  );
-});
-
-
 app.post("/apply", async (req, res) => {
   console.log("res = " + JSON.stringify(req.body))
   if (!req.body.name || !req.body.companyEmail || !req.body.linkedinUrl || !req.body.contactNumber || !req.body.yourHRIS) {
@@ -120,6 +109,16 @@ app.post("/requestDemo", async (req, res) => {
       res.status(500).send();
     }
   }
+});
+
+app.use(express.static(path.join(__dirname, "./Frontend/build")));
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "./Frontend/build/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
 });
 
 //listening on specified Port
