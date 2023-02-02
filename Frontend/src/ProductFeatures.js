@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
- import './ProductFeatures.css';
+import './ProductFeatures.css';
 function ProductFeatures() {
   return (
     <>

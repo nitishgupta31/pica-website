@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Image, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import './Navbar.css';
 
 const NavbarComponent = () => (
@@ -7,7 +7,7 @@ const NavbarComponent = () => (
   <Navbar expand="lg" className="navbar-bgc">
     <Container>
       <Navbar.Brand href="/" >
-      <img className="logo" src="../img/pica_navbar_icon.jpeg"/>
+      <img className="logo" src="../img/pica_navbar_icon.jpeg" alt="logo"/>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-center">
