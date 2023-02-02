@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const port = process.env.PORT || 3000;
 const { google } = require("googleapis")
 
@@ -10,12 +11,23 @@ app.use('/static', express.static('static')) // For serving static files
 app.use(express.urlencoded({ extended: true })) //To extract the data from the website to the app.js file
 app.use(bodyParser.json());
 
-// Home Page
-app.get("/", (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({ a: 1 }, null, 3));
+// // Home Page
+// app.get("/", (req, res) => {
+//   res.setHeader('Content-Type', 'application/json');
+//   res.end(JSON.stringify({ a: 1 }, null, 3));
   
+// });
+
+app.use(express.static(path.join(__dirname, "./Frontend/build")));
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "./Frontend/build/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
 });
+
 
 app.post("/apply", async (req, res) => {
   console.log("res = " + JSON.stringify(req.body))
