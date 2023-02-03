@@ -1,22 +1,22 @@
 
 // export default App;
 import {Routes , Route } from "react-router-dom"; 
-import Contact from './Contact';
-import NavbarComponent from "./Navbar";
-import Section from './Section';
-import ProductFeatures from "./ProductFeatures";
-import Banner from './Banner';
-import ApplyForAccess from "./ApplyForAccess";
-import Security from  "./Security";
-import Footer from "./Footer"
+import Demo from './demo/Demo';
+import NavbarComponent from "./navbar/Navbar";
+import Solutions from './solutions/Solutions';
+import ProductFeatures from "./productFeatures/ProductFeatures";
+import Banner from './banner/Banner';
+import ApplyForAccess from "./applyForAccess/ApplyForAccess";
+import Security from  "./security/Security";
+import Footer from "./footer/Footer"
 
 export default function App() { 
    return ( 
       <div className="App"> 
 	      <NavbarComponent/>
         <Routes>
-          <Route path ="/" element= {<><Banner /><Section /> <ProductFeatures /> <Security/> </>}/>  
-          <Route path ="/demo" element= {<Contact />}/> 
+          <Route path ="/" element= {<><Banner /><Solutions /> <ProductFeatures /> <Security/> </>}/>  
+          <Route path ="/demo" element= {<Demo />}/> 
           <Route path ="/apply" element= {<ApplyForAccess />}/> 
         </Routes> 
         <Footer />

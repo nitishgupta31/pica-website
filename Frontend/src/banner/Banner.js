@@ -12,7 +12,7 @@ const Banner = () => {
                 Workforce Productivity <br></br>Software
               </h1>
               <h4>
-                Achieve more with less by streamlining Technology, processes and People
+                Achieve more with less by streamlining technology, processes and People
               </h4>
               <br></br>
               <Link to="/demo">

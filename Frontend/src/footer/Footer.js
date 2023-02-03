@@ -15,7 +15,7 @@ const Footer = () => {
           <li class="nav-item"><a href="mailto:shivi@picahq.com" class="text-white nav-link px-2"> <i class="fa fa-envelope fa-2x"></i></a> </li>
 
         </ul>
-        <p class="text-white text-center py-1">&copy; 2022 Company, Inc. All rights reserved.</p>
+        <p class="text-white text-center py-1">&copy; 2023 Company, Inc. All rights reserved.</p>
       </footer>
     </div>
   );

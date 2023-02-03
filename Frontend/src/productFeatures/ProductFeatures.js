@@ -48,9 +48,8 @@ function ProductFeatures() {
                     <div id="hs_cos_wrapper_module_15676794396322027" className="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text widget-type-rich_text" style={{}} data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_module_15676794396322027_" className="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style={{}} data-hs-cos-general-type="widget" data-hs-cos-type="rich_text">
                         <div className="largeNumberStatWrapper">
                           <h4>Easy Integration</h4>
-                          <br />
                           <p>
-                          Applaud is built to work with your existing processes and technology, not replace them, so you can make change happen without disrupting your systems of record.                            </p>
+                          Pica is built to work with your existing processes and technology, not replace them, so you can make change happen without disrupting your systems of record.                            </p>
                         </div>
                       </span></div>
                   </div>{/*end widget-span */}

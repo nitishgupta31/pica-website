@@ -1,15 +1,14 @@
 import React from 'react';
 import { useState } from "react";
-import './Contact.css'
 import { Spinner } from 'react-bootstrap';
+import './Demo.css'
 
-export default function ApplyForAccess() {
-
+export default function Demo() {
   const [name, setName] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [companyEmail, setCompanyEmail] = useState("");
-  const [linkedinUrl, setlinkedinUrl] = useState("");
   const [contactNumber, setContactNumber] = useState("");
-  const [yourHRIS, setyourHRIS] = useState("");
+  const [fromWhereDidYouHear, setFromWhereDidYouHear] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,24 +20,24 @@ export default function ApplyForAccess() {
 
     try {
       setLoading(true);
-      let res = await fetch("/apply", {
+      let res = await fetch("/requestDemo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: name,
+          companyName: companyName,
           companyEmail: companyEmail,
-          linkedinUrl: linkedinUrl,
           contactNumber: contactNumber,
-          yourHRIS: yourHRIS
+          fromWhereDidYouHear: fromWhereDidYouHear
         }),
       });
       console.log("reposnse is " + res.status);
       if (res.status === 200) {
         setName("");
+        setCompanyName("");
         setContactNumber("");
-        setlinkedinUrl("");
-        setyourHRIS("");
         setCompanyEmail("");
+        setFromWhereDidYouHear("");
         setErrorMessage("");
         setSuccessMessage("Thank you! We'll be in touch soon!");
       } else {
@@ -61,7 +60,9 @@ export default function ApplyForAccess() {
       <div className='row contact-div'>
         <div className='col-md-4'>
           <div className="form-base">
-            <h3 className="plain-h3">Apply Here</h3>
+            <h3 className="plain-h3">Request a demo</h3>
+            <div
+              className="hero-details">We can't wait to show you Demo.</div>
             <div className="w-form">
               <form id="wf-form-Register-Form" name="wf-form-Register-Form" data-name="Register Form"
                 aria-label="Register Form" onSubmit={handleSubmit}>
@@ -72,22 +73,16 @@ export default function ApplyForAccess() {
                   value={companyEmail} placeholder="Enter your company email address" onChange={(e) => setCompanyEmail(e.target.value)}
                   id="Email" required />
                 </div>
-                <div className="form-wrap"><input type="url" className="text-field w-input" autofocus="true" maxlength="256"
-                  name="linkedinUrl" value={linkedinUrl} placeholder="https://www.linkedin.com/in/user" onChange={(e) => setlinkedinUrl(e.target.value)} id="Full-Name-2" required /></div>
+                <div className="form-wrap"><input type="text" className="text-field w-input" autofocus="true" maxlength="256"
+                  name="companyName" value={companyName} placeholder="Company name" onChange={(e) => setCompanyName(e.target.value)} id="Full-Name-2" required /></div>
 
                 <div className="form-wrap"><input type="text" className="text-field w-input" autofocus="true" maxlength="256"
                   name="contactNumber" value={contactNumber} placeholder="Contact Number" onChange={(e) => setContactNumber(e.target.value)} id="Full-Name-2" required /></div>
 
-                <div className="form-wrap">
-                  <input list="yourHRIS" name="yourHRIS" className="text-field w-input" autofocus="true" maxlength="256" value={yourHRIS} placeholder="your HRIS" onChange={(e) => setyourHRIS(e.target.value)} id="Full-Name-2" required/>
-                  <datalist id="yourHRIS">
-                    <option value="Workday" />
-                    <option value="ADP" />
-                    <option value="Oracle HRMS" />
-                    <option value="UKG" />
-                    <option value="Others" />
-                  </datalist>
-                </div>
+                <div className="form-wrap"><input type="text" className="text-field w-input" autofocus="true" maxlength="256"
+                  name="fromWhereDidYouHear" value={fromWhereDidYouHear} placeholder="From Where did You hear about us" onChange={(e) => setFromWhereDidYouHear(e.target.value)} id="Full-Name-2" required /></div>
+
+                <div className="form-wrap"></div>
                 <button type="submit" value="Submit" data-wait="Please wait..."
                   className="button-submit w-button" disabled={loading}>
                   {loading ? (
