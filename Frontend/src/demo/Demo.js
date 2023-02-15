@@ -113,9 +113,9 @@ export default function Demo() {
           </div>
         </div>
         <div className='col-md-4 form-right'>
-          <h3>Unmatched total compensation understanding</h3>
+          <h3>Unmatched Employee experience</h3>
           <h4 >
-            As a founder, it’s important to me that every candidate understands their compensation & role at our company. Comp — especially equity comp — is really complex, and Complete enables us to communicate clearly and consistently to every candidate, while staying fun & in line with our values
+          As a founder, it is important for me that every employee should received a customer grade experience. Also it is important that I free HR from mundane task, so that they can contribute towards bringing best out of employees.
           </h4>
         </div>
       </div>
