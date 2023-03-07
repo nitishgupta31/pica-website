@@ -9,7 +9,7 @@ const Banner = () => {
           <div className="col-lg-5 col-md-5 col-12 container-col">
             <div class="banner-items mt-5">
               <h1 class="text-black" data-aos="fade-up" data-aos-delay="500">
-                Workforce Productivity <br></br>Software
+                Employee Listening and Coaching Tool
               </h1>
               <h4>
                 Achieve more with less by streamlining technology, processes and People
